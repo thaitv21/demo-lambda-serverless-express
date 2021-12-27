@@ -1,0 +1,5 @@
+import { mongoProvider, sequelizeProvider } from "../providers";
+import { REPO_NAME } from "./interfaces/REPO_NAME";
+
+export default class REPO_NAMEImpl implements REPO_NAME {
+}

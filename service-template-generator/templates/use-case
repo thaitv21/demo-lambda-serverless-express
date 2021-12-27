@@ -1,0 +1,5 @@
+import { } from "../repositories";
+import { UC_NAME } from "./interfaces/UC_NAME";
+
+export default class UC_NAMEImpl implements UC_NAME {
+}

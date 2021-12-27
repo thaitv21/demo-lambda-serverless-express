@@ -1,0 +1,6 @@
+import { Column, Model, Table } from 'sequelize-typescript';
+import { MODEL_NAME } from '../../../../models/MODEL_NAME';
+
+@Table({tableName: 'MODEL_NAMEs'})
+export default class MODEL_NAMEModel extends Model implements MODEL_NAME {
+}

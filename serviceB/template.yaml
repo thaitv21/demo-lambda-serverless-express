@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: ServiceB serverless APIs
+
+Resources:
+  ServiceB:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: test-serviceB
+      CodeUri: ./deployment/lambda.zip
+      Handler: lambda.handler
+      Tracing: Active
+      Runtime: nodejs10.x
+      AutoPublishAlias: live
+      Environment:
+        Variables:
+          NODE_ENV: dev
+          AWS_REGION: ca-central-1
+  ServiceBLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: ServiceB-layer
+      Description: Sharp NPM package.
+      ContentUri: './deployment/layer'
+      CompatibleRuntimes:
+        - nodejs12.x
+      LicenseInfo: 'Available under the Apache-2.0 license.'
+      RetentionPolicy: Retain

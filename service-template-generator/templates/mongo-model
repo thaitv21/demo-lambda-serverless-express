@@ -1,0 +1,10 @@
+import { model, Schema } from 'mongoose';
+import { MODEL_NAME } from '../../../../models/MODEL_NAME';
+
+const schema = new Schema<MODEL_NAME>({
+  name: {type: String, required: true}
+});
+
+const MODEL_NAMEModel = model<MODEL_NAME>('MODEL_NAME', schema);
+
+export default MODEL_NAMEModel;
